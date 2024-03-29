@@ -4,7 +4,7 @@
 sudo dnf update
 
 ## INSTALL 
-sudo dnf -y install wget vim curl zsh zip unzip
+sudo dnf -y install wget vim curl zsh zip unzip neofetch htop
 sudo dnf -y groupinstall "Development Tools"
 sudo dnf -y install autoconf re2c libxml2-devel sqlite-devel libcurl-devel gd-devel openssl g++ oniguruma-devel libpq libpq-devel readline-devel libzip-devel
 
@@ -27,7 +27,6 @@ chsh -s $(which zsh)
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 
-
 ## INSTALL ASDF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 
@@ -35,6 +34,7 @@ source ~/.zshrc
 
 ## INSTALL ZINIT
 bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
+
 
 asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
 asdf plugin-add php https://github.com/asdf-community/asdf-php.git
@@ -76,7 +76,6 @@ flatpak install -y --noninteractive flathub com.slack.Slack
 flatpak install -y --noninteractive flathub com.discordapp.Discord
 
 
-
 ## INSTALL DOCKER
 sudo dnf remove docker \
     docker-client \
@@ -97,5 +96,12 @@ sudo systemctl start docker
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
+cp .bash_profile ~/.bash_profile
+cp .bash ~/.bash
+cp .env ~/.env
+cp .p10k.zsh ~/.p10k.zsh
+cp .profile ~/.profile
+cp .tool-versions ~/.tool-versions
+cp .zshrc ~/.zshrc
 
 reboot
