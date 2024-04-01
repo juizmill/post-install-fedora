@@ -4,7 +4,7 @@
 
 
 . "$HOME/.asdf/asdf.sh"
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.asdf/installs/php/8.3.2/.composer/vendor/bin:$PATH
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then

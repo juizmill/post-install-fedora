@@ -4,9 +4,12 @@
 sudo dnf update
 
 ## INSTALL 
-sudo dnf -y install wget vim curl zsh zip unzip neofetch htop
+sudo dnf -y install wget vim curl zsh zip unzip neofetch htop flameshot openssl openssl-devel
 sudo dnf -y groupinstall "Development Tools"
 sudo dnf -y install autoconf re2c libxml2-devel sqlite-devel libcurl-devel gd-devel openssl g++ oniguruma-devel libpq libpq-devel readline-devel libzip-devel
+
+sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf -y install gstreamer1-plugins-ugly vlc gstreamer1-plugins-good-extras ffmpeg libavcodec-freeworld gstreamer1-plugin-openh264 --best --allowerasing
 
 ## INSTALL FONT
 mkdir -p ~/.local/share/fonts/
@@ -72,8 +75,18 @@ cd ~
 ## SLACK
 flatpak install -y --noninteractive flathub com.slack.Slack
 
-## SLACK
+## DISCORD
 flatpak install -y --noninteractive flathub com.discordapp.Discord
+
+## COMPASS
+flatpak install -y --noninteractive flathub com.mongodb.Compass
+
+## POSTMAN
+## https://github.com/postmanlabs/postman-app-support/issues/11620
+flatpak install -y --noninteractive flathub com.getpostman.Postman
+mkdir -p ~/.var/app/com.getpostman.Postman/config/Postman/proxy/
+openssl req -subj '/C=US/CN=Postman Proxy' -new -newkey rsa:2048 -sha256 -days 365 -nodes -x509 -keyout ~/.var/app/com.getpostman.Postman/config/Postman/proxy/postman-proxy-ca.key -out ~/.var/app/com.getpostman.Postman/config/Postman/proxy/postman-proxy-ca.crt
+
 
 
 ## INSTALL DOCKER
@@ -103,5 +116,7 @@ cp .p10k.zsh ~/.p10k.zsh
 cp .profile ~/.profile
 cp .tool-versions ~/.tool-versions
 cp .zshrc ~/.zshrc
+cp flameshot-gui ~/flameshot-gui
+chmod +x ~/flameshot-gui
 
 reboot
