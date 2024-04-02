@@ -84,6 +84,9 @@ flatpak install -y --noninteractive flathub com.discordapp.Discord
 ## COMPASS
 flatpak install -y --noninteractive flathub com.mongodb.Compass
 
+## REDISINSIGHT
+flatpak install -y --noninteractive flathub com.redis.RedisInsight
+
 ## POSTMAN
 ## https://github.com/postmanlabs/postman-app-support/issues/11620
 flatpak install -y --noninteractive flathub com.getpostman.Postman
