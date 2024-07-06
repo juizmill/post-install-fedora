@@ -46,14 +46,14 @@ asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
 asdf plugin-add php https://github.com/asdf-community/asdf-php.git
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
-asdf install rust 1.76.0
-asdf install php 8.2.15
-asdf install php 8.3.2
-asdf install nodejs 20.11.0
+asdf install rust 1.79.0
+asdf install php 8.2.21
+asdf install php 8.3.9
+asdf install nodejs 20.15.0
 
-asdf global rust 1.76.0
-asdf global php 8.3.2
-asdf global nodejs 20.11.0
+asdf global rust 1.79.0
+asdf global php 8.3.9
+asdf global nodejs 20.15.0
 
 ## INSTALL TOLLS
 
