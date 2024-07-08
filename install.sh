@@ -88,7 +88,7 @@ flatpak install -y --noninteractive flathub com.mongodb.Compass
 flatpak install -y --noninteractive flathub com.redis.RedisInsight
 
 ## DRAWIO
-flatpak install flathub com.jgraph.drawio.desktop
+flatpak install -y --noninteractive flathub com.jgraph.drawio.desktop
 
 ## POSTMAN
 ## https://github.com/postmanlabs/postman-app-support/issues/11620
