@@ -4,7 +4,7 @@
 sudo dnf update
 
 ## INSTALL 
-sudo dnf -y install wget vim curl zsh zip unzip neofetch htop flameshot openssl openssl-devel mysql
+sudo dnf -y install wget vim curl zsh zip unzip neofetch htop flameshot openssl openssl-devel mysql zsh
 sudo dnf -y groupinstall "Development Tools"
 sudo dnf -y install autoconf re2c libxml2-devel sqlite-devel libcurl-devel gd-devel openssl g++ oniguruma-devel libpq libpq-devel readline-devel libzip-devel
 
