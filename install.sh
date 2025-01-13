@@ -4,8 +4,8 @@
 sudo dnf update
 
 ## INSTALL 
-sudo dnf -y install wget vim curl zsh zip unzip neofetch htop flameshot openssl openssl-devel mysql zsh
-sudo dnf -y groupinstall "Development Tools"
+sudo dnf -y install wget vim curl zsh zip unzip neofetch htop flameshot openssl openssl-devel mysql
+sudo dnf install @development-tools
 sudo dnf -y install autoconf re2c libxml2-devel sqlite-devel libcurl-devel gd-devel openssl g++ oniguruma-devel libpq libpq-devel readline-devel libzip-devel
 
 sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
