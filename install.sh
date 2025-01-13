@@ -25,6 +25,20 @@ wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20B
 ## LOAD FONTS
 sudo fc-cache -f -v
 
+
+## COPY FILES
+
+cp .bash_profile ~/.bash_profile
+cp .bash ~/.bash
+cp .env ~/.env
+cp .p10k.zsh ~/.p10k.zsh
+cp .profile ~/.profile
+cp .tool-versions ~/.tool-versions
+cp .zshrc ~/.zshrc
+cp flameshot-gui ~/flameshot-gui
+chmod +x ~/flameshot-gui
+
+
 ## CHANGE TO ZSH
 chsh -s $(which zsh)
 
@@ -96,8 +110,6 @@ flatpak install -y --noninteractive flathub com.getpostman.Postman
 mkdir -p ~/.var/app/com.getpostman.Postman/config/Postman/proxy/
 openssl req -subj '/C=US/CN=Postman Proxy' -new -newkey rsa:2048 -sha256 -days 365 -nodes -x509 -keyout ~/.var/app/com.getpostman.Postman/config/Postman/proxy/postman-proxy-ca.key -out ~/.var/app/com.getpostman.Postman/config/Postman/proxy/postman-proxy-ca.crt
 
-
-
 ## INSTALL DOCKER
 sudo dnf remove docker \
     docker-client \
@@ -120,15 +132,5 @@ sudo usermod -aG docker $USER
 
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.26.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
-
-cp .bash_profile ~/.bash_profile
-cp .bash ~/.bash
-cp .env ~/.env
-cp .p10k.zsh ~/.p10k.zsh
-cp .profile ~/.profile
-cp .tool-versions ~/.tool-versions
-cp .zshrc ~/.zshrc
-cp flameshot-gui ~/flameshot-gui
-chmod +x ~/flameshot-gui
 
 reboot
