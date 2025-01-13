@@ -4,11 +4,9 @@
 sudo dnf update
 
 ## INSTALL 
-sudo dnf -y install wget vim curl zsh zip unzip neofetch htop flameshot openssl openssl-devel mysql
-sudo dnf install @development-tools
+sudo dnf -y install wget vim curl zip unzip htop flameshot openssl openssl-devel mysql zsh
+sudo dnf -y install @development-tools
 sudo dnf -y install autoconf re2c libxml2-devel sqlite-devel libcurl-devel gd-devel openssl g++ oniguruma-devel libpq libpq-devel readline-devel libzip-devel
-
-sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf -y install gstreamer1-plugins-ugly vlc gstreamer1-plugins-good-extras ffmpeg libavcodec-freeworld gstreamer1-plugin-openh264 --best --allowerasing
 
 ## INSTALL FONT
@@ -21,23 +19,19 @@ wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20R
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -P ~/.local/share/fonts/
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -P ~/.local/share/fonts/
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P ~/.local/share/fonts/
-
-## LOAD FONTS
 sudo fc-cache -f -v
 
 
 ## COPY FILES
 
 cp .bash_profile ~/.bash_profile
-cp .bash ~/.bash
 cp .env ~/.env
 cp .p10k.zsh ~/.p10k.zsh
 cp .profile ~/.profile
 cp .tool-versions ~/.tool-versions
-cp .zshrc ~/.zshrc
+
 cp flameshot-gui ~/flameshot-gui
 chmod +x ~/flameshot-gui
-
 
 ## CHANGE TO ZSH
 chsh -s $(which zsh)
@@ -46,10 +40,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 
 ## INSTALL ASDF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
-
-source ~/.zshrc
-
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cp .zshrc ~/.zshrc
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 ## INSTALL ZINIT
@@ -123,7 +115,7 @@ sudo dnf remove docker \
     docker-engine
 
 sudo dnf -y install dnf-plugins-core
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo systemctl start docker
 
